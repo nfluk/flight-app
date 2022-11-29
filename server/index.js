@@ -1,6 +1,12 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const mongoose = require('mongoose');
+import express from 'express';
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
+
+import authRoute from './routes/auth.js';
+import usersRoute from './routes/users.js';
+import flightsRoute from './routes/flights.js';
+import departuresRoute from './routes/departures.js';
+import arrivalsRoute from './routes/arrivals.js';
 
 const app = express();
 const PORT = 3000;
@@ -20,9 +26,12 @@ mongoose.connection.on('disconnected', () => {
   console.log('MongoDB disconnected');
 });
 
-mongoose.connection.on('connected', () => {
-  console.log('MongoDB connected');
-});
+//middleware
+app.use('/api/auth', authRoute);
+app.use('/api/users', authRoute);
+app.use('/api/flights', authRoute);
+app.use('/api/departures', authRoute);
+app.use('/api/arrivals', authRoute);
 
 app.listen(PORT, () => {
   connect();
