@@ -1,9 +1,17 @@
-import './navbar.css';
+import './Navbar.css';
 
 const Navbar = () => {
   return (
     <div>
-      <h1>This is the NAVBAR</h1>
+      <div className="navbar">
+        <div className="navbar-container">
+          <span className="navbar__logo">Flight Booker</span>
+          <div className="navbar__items">
+            <button className="navbar__button">Register</button>
+            <button className="navbar__button">Login</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
