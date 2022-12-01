@@ -11,12 +11,7 @@ function Header() {
   return (
     <div className="header">
       <div className="header-container">
-        <div className="header-list">
-          {/* <div className="header-list__item active">
-            <FontAwesomeIcon icon={faPlane} />
-            <span>Flights</span>
-          </div> */}
-        </div>
+        <div className="header-list"></div>
         <h1 className="header--title">Start Booking</h1>
         <p className="header--description">Find Your Flight</p>
         <button className="header--button">Sign in</button>
