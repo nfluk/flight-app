@@ -1,0 +1,38 @@
+.header {
+  background-color: antiquewhite; /* maybe keep same color as navbar */
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 2rem 0 2rem 0;
+}
+
+.header-list__item {
+  width: 6rem;
+  padding: 0.8rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.header-list__item.active {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.header--description {
+  margin: 1rem 0;
+}
+
+.header--button {
+  margin-right: 1rem;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid rgb(226, 90, 40);
+  background-color: coral;
+  font-weight: bold;
+}
