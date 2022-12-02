@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCalendarDays,
-  faHandPointLeft,
   faPerson,
   faPlane,
 } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +10,6 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { format } from 'date-fns';
 import './Header.css';
-import { setDayWithOptions } from 'date-fns/fp';
 
 function Header() {
   const [showDates, setShowDates] = useState(false);
@@ -45,8 +43,7 @@ function Header() {
     <div className="header">
       <div className="header-container">
         <div className="header-list"></div>
-        <h1 className="header--title">Start Booking</h1>
-        <p className="header--description">Find Your Flight</p>
+        <h1 className="header--title">Start Your Adventure Here</h1>
         <button className="header--button">Sign in</button>
         <div className="header-search">
           <div className="header-search--item">
