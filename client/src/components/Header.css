@@ -2,12 +2,13 @@
   background-color: antiquewhite; /* maybe keep same color as navbar */
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .header-container {
   width: 100%;
   max-width: 1400px;
-  margin: 2rem 0 2rem 0;
+  margin: 2rem 0 4rem 0;
 }
 
 .header-list__item {
@@ -31,8 +32,92 @@
   padding: 0.4rem 0.6rem;
   cursor: pointer;
   border: none;
-  border-radius: 5px;
   border: 1px solid rgb(226, 90, 40);
+  border-radius: 5px;
   background-color: coral;
   font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.header--button:hover {
+  box-shadow: 3px 2px 11px #4444dd;
+  transform: scale(1.05);
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0.5rem 0;
+  height: 3rem;
+  background-color: white;
+  border: 2px solid black;
+  position: absolute;
+  bottom: -2rem;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.header-search--item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.header-search--input {
+  outline: none;
+  border: none;
+}
+
+.header-search--text {
+  cursor: pointer;
+  color: rgb(180, 180, 180);
+}
+
+.header-icon {
+  color: coral;
+  height: 1.3rem;
+}
+
+.header-icon:hover {
+  filter: drop-shadow(6px 7px 2px #4444dd);
+}
+
+.date {
+  position: absolute;
+  top: 4rem;
+}
+
+.options {
+  position: absolute;
+  top: 4rem;
+  padding: 1rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: rgb(238, 159, 130);
+  box-shadow: 3px 2px 11px #4444dd;
+}
+
+.option-item {
+  display: flex;
+  justify-content: space-between;
+  width: 10rem;
+  margin: 0.5rem;
+}
+
+.option-counter {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.option-counter-button {
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.option-counter-button:hover {
+  transform: scale(1.2);
 }
