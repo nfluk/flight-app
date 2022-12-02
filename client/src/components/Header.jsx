@@ -88,55 +88,65 @@ function Header() {
           </div>
           <div className="header-search--item">
             <FontAwesomeIcon icon={faPerson} className="header-icon" />
-            <span>{`${people.adults} adults & ${people.children} children `}</span>
-            <div className="options">
-              <div className="option-item">
-                <span className="option-text">Adults</span>
-                <div className="option-counter">
-                  <button
-                    className="option-counter-button"
-                    onClick={() => {
-                      handleOption('adults', 'increase');
-                    }}
-                  >
-                    +
-                  </button>
-                  <span className="option-counter-number">{people.adults}</span>
-                  <button
-                    className="option-counter-button"
-                    onClick={() => {
-                      handleOption('adults', 'decrease');
-                    }}
-                  >
-                    -
-                  </button>
+            <span
+              onClick={() => {
+                setShowPeople(!showPeople);
+              }}
+            >{`${people.adults} adults & ${people.children} children `}</span>
+            {showPeople && (
+              <div className="options">
+                <div className="option-item">
+                  <span className="option-text">Adults</span>
+                  <div className="option-counter">
+                    <button
+                      className="option-counter-button"
+                      onClick={() => {
+                        handleOption('adults', 'increase');
+                      }}
+                    >
+                      +
+                    </button>
+                    <span className="option-counter-number">
+                      {people.adults}
+                    </span>
+                    <button
+                      className="option-counter-button"
+                      disabled={people.adults <= 0}
+                      onClick={() => {
+                        handleOption('adults', 'decrease');
+                      }}
+                    >
+                      -
+                    </button>
+                  </div>
+                </div>
+                <div className="option-item">
+                  <span className="option-text">Children</span>
+                  <div className="option-counter">
+                    <button
+                      className="option-counter-button"
+                      onClick={() => {
+                        handleOption('children', 'increase');
+                      }}
+                    >
+                      +
+                    </button>
+                    <span className="option-counter-number">
+                      {people.children}
+                    </span>
+                    <button
+                      className="option-counter-button"
+                      disabled={people.children <= 0}
+                      onClick={() => {
+                        handleOption('children', 'decrease');
+                      }}
+                    >
+                      -
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div className="option-item">
-                <span className="option-text">Children</span>
-                <div className="option-counter">
-                  <button
-                    className="option-counter-button"
-                    onClick={() => {
-                      handleOption('children', 'increase');
-                    }}
-                  >
-                    +
-                  </button>
-                  <span className="option-counter-number">
-                    {people.children}
-                  </span>
-                  <button
-                    className="option-counter-button"
-                    onClick={() => {
-                      handleOption('children', 'decrease');
-                    }}
-                  >
-                    -
-                  </button>
-                </div>
-              </div>
-            </div>
+            )}
           </div>
           <div className="header-search--item">
             <button className="header--button">Search</button>
